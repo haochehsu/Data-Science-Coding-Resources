@@ -1,6 +1,15 @@
 # Data Science Coding Resources
 
-### Colab (https://colab.google), recommended
+- Online notebooks
+  - [Google Colab](#colab-httpscolabgoogle) (recommended)
+  - [Kaggle](#kaggle-httpswwwkagglecomcode)
+- Cloud instances
+  - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
+  - [AWS: SageMaker](#aws-sagemaker)
+
+---
+
+### Colab (https://colab.google)
 <img draggable="false" src="/image/colab_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 - Notebooks: `Python`, `R`
@@ -21,6 +30,18 @@
 - Runtimes limited to 9 hours.
 - AI: N/A.
 
+---
+### VS Code ([Download](https://code.visualstudio.com/))
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+### Jupyter Notebook ([Website](https://jupyter.org/))  
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+### Jupyter Lab ([Website](https://jupyterlab.readthedocs.io/en/latest/))
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+---
+
 ### Google Cloud ([Vertex AI](https://console.cloud.google.com/vertex-ai/workbench/user-managed?hl=en))
 <img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
@@ -32,7 +53,7 @@
   - `Tensorflow` and `PyTorch` instances: Available to add a `T4 GPU`.
 - Pricing: $0.15 hourly
   - [Pricing](https://cloud.google.com/vertex-ai/pricing) for other instance configurations.
- 
+
 ### AWS ([SageMaker](https://us-west-1.console.aws.amazon.com/sagemaker/home?region=us-west-1#/notebook-instances))
 <img draggable="false" src="/image/aws_icon.png" alt="" style="width: 8%; padding-bottom:5px; pointer-events:none"/>
 
