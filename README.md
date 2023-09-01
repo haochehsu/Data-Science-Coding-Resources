@@ -2,6 +2,7 @@
 
 - Online notebooks
   - [Google Colab](#colab-httpscolabgoogle) (recommended)
+  - [Databricks](#kaggle-httpswwwkagglecomcode)
   - [Kaggle](#kaggle-httpswwwkagglecomcode)
 - Local notebooks
   - [VS Code](#kaggle-httpswwwkagglecomcode)
@@ -13,7 +14,7 @@
 
 ---
 
-### Colab (https://colab.google)
+### Colab ([Link](https://colab.google))
 <img draggable="false" src="/image/colab_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 - Notebooks: `Python`, `R`
@@ -25,8 +26,8 @@
 - AI: code generation
   - Only available to paid accounts (Pro+: available, Pro: rolling out).
 
-### Databricks (https://community.cloud.databricks.com/)
-<img draggable="false" src="/image/kaggle_icon.png" alt="" style="width: 3%; padding-bottom:5px; pointer-events:none"/>
+### Databricks ([Link](https://community.cloud.databricks.com/))
+<img draggable="false" src="/image/db_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
 
 - Sign-up: [Link](https://www.databricks.com/try-databricks#account)
   1. Enter name, company, email, and title, and click Continue.
@@ -34,7 +35,7 @@
 - Notebooks: `Python`, `R`, `SQL`, `Scala`.
 - AI: N/A.
 
-### Kaggle (https://www.kaggle.com/code)
+### Kaggle ([Link](https://www.kaggle.com/code))
 <img draggable="false" src="/image/kaggle_icon.png" alt="" style="width: 3%; padding-bottom:5px; pointer-events:none"/>
 
 - Notebooks: `Python`, `R`
@@ -45,7 +46,7 @@
 
 ---
 ### VS Code ([Download](https://code.visualstudio.com/))
-<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
 
 ### Jupyter Notebook ([Website](https://jupyter.org/))  
 <img draggable="false" src="/image/jn_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
