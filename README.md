@@ -3,6 +3,10 @@
 - Online notebooks
   - [Google Colab](#colab-httpscolabgoogle) (recommended)
   - [Kaggle](#kaggle-httpswwwkagglecomcode)
+- Local notebooks
+  - [VS Code](#kaggle-httpswwwkagglecomcode)
+  - [Jupyter Notebook](#jupyter-notebook-website)
+  - [Jupyter Lab](#jupyter-lab-website)
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
   - [AWS: SageMaker](#aws-sagemaker)
@@ -32,13 +36,13 @@
 
 ---
 ### VS Code ([Download](https://code.visualstudio.com/))
-<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
 
 ### Jupyter Notebook ([Website](https://jupyter.org/))  
-<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+<img draggable="false" src="/image/jn_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 ### Jupyter Lab ([Website](https://jupyterlab.readthedocs.io/en/latest/))
-<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+<img draggable="false" src="/image/jl_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 ---
 
