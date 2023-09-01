@@ -1,9 +1,11 @@
 # Data Science Coding Resources
 
-[create an anchor](#aws-sagemaker)
+- Online notebooks
+  - [Google Colab](#colab-httpscolabgoogle-recommended) (recommended)
 
+---
 
-### Colab (https://colab.google), recommended
+### Colab (https://colab.google)
 <img draggable="false" src="/image/colab_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 - Notebooks: `Python`, `R`
