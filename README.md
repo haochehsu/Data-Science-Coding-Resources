@@ -27,8 +27,18 @@
 - Setup:
   1. Create a `project`.
   2. `Notebooks` -> `Workbench` -> `User-managed Notebooks` -> `Create New`
-     - Default: 4 CPUs, 100GB storage, 15GB memory
+     - Default: 4 CPUs, 15GB memory, 100GB storage.
 - New instance environments: `Python 3` (recommended), `Tensorflow`, `PyTorch`
   - `Tensorflow` and `PyTorch` instances: Available to add a `T4 GPU`.
 - Pricing: $0.15 hourly
   - [Pricing](https://cloud.google.com/vertex-ai/pricing) for other instance configurations.
+ 
+### AWS ([SageMaker](https://us-west-1.console.aws.amazon.com/sagemaker/home?region=us-west-1#/notebook-instances))
+<img draggable="false" src="/image/aws_icon.png" alt="" style="width: 8%; padding-bottom:5px; pointer-events:none"/>
+
+- Setup:
+  1. `Create notebook instance`.
+  2. Notebook instance type: `ml.t3.medium`.
+     - 2 CPUs, 4GB memory, 125GB storage.
+  3. [Pricing](https://aws.amazon.com/sagemaker/pricing/) for other instance configurations.
+
