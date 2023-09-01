@@ -36,7 +36,7 @@
 
 ---
 ### VS Code ([Download](https://code.visualstudio.com/))
-<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
+<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 ### Jupyter Notebook ([Website](https://jupyter.org/))  
 <img draggable="false" src="/image/jn_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
