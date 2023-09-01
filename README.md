@@ -1,6 +1,6 @@
 # Data Science Coding Resources
 
-### Colab (https://colab.google)
+### Colab (https://colab.google), recommended
 <img draggable="false" src="/image/colab_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
 - Notebooks: `Python`, `R`
@@ -22,3 +22,13 @@
 - AI: N/A.
 
 ### Google Cloud ([Vertex AI](https://console.cloud.google.com/vertex-ai/workbench/user-managed?hl=en))
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+- Setup:
+  1. Create a `project`.
+  2. `Notebooks` -> `Workbench` -> `User-managed Notebooks` -> `Create New`
+     - Default: 4 CPUs, 100GB storage, 15GB memory
+- New instance environments: `Python 3` (recommended), `Tensorflow`, `PyTorch`
+  - `Tensorflow` and `PyTorch` instances: Available to add a `T4 GPU`.
+- Pricing: $0.15 hourly
+  - [Pricing](https://cloud.google.com/vertex-ai/pricing) for other instance configurations.
