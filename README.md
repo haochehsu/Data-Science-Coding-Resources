@@ -25,6 +25,15 @@
 - AI: code generation
   - Only available to paid accounts (Pro+: available, Pro: rolling out).
 
+### Databricks (https://community.cloud.databricks.com/)
+<img draggable="false" src="/image/kaggle_icon.png" alt="" style="width: 3%; padding-bottom:5px; pointer-events:none"/>
+
+- Sign-up: [Link](https://www.databricks.com/try-databricks#account)
+  1. Enter name, company, email, and title, and click Continue.
+  2. On the `Choose a cloud provider` page, click the `Get started with Community Edition` link at the bottom.
+- Notebooks: `Python`, `R`, `SQL`, `Scala`.
+- AI: N/A.
+
 ### Kaggle (https://www.kaggle.com/code)
 <img draggable="false" src="/image/kaggle_icon.png" alt="" style="width: 3%; padding-bottom:5px; pointer-events:none"/>
 
