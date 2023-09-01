@@ -1,7 +1,7 @@
 # Data Science Coding Resources
 
 - Online notebooks
-  - [Google Colab](#colab-httpscolabgoogle-recommended) (recommended)
+  - [Google Colab](#colab-httpscolabgoogle) (recommended)
   - [Kaggle](#kaggle-httpswwwkagglecomcode)
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
