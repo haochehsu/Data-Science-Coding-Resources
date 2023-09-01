@@ -1,6 +1,6 @@
 # Data Science Coding Resources
 
-[create an anchor](#anchors-in-markdown)
+[create an anchor](#aws)
 
 
 ### Colab (https://colab.google), recommended
@@ -36,7 +36,7 @@
 - Pricing: $0.15 hourly
   - [Pricing](https://cloud.google.com/vertex-ai/pricing) for other instance configurations.
 
-[#some-markdown-heading]
+### [aws] 
 
 ### AWS ([SageMaker](https://us-west-1.console.aws.amazon.com/sagemaker/home?region=us-west-1#/notebook-instances))
 <img draggable="false" src="/image/aws_icon.png" alt="" style="width: 8%; padding-bottom:5px; pointer-events:none"/>
