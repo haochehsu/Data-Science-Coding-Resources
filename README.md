@@ -5,7 +5,7 @@
   - [Kaggle](#kaggle-httpswwwkagglecomcode)
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
-  - [AWS: SageMaker](#SageMaker)
+  - [AWS: SageMaker](#aws-sagemaker)
 
 ---
 
