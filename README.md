@@ -31,6 +31,16 @@
 - AI: N/A.
 
 ---
+### VS Code ([Download](https://code.visualstudio.com/))
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+### Jupyter Notebook ([Website](https://jupyter.org/))  
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+### Jupyter Lab ([Website](https://jupyterlab.readthedocs.io/en/latest/))
+<img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+---
 
 ### Google Cloud ([Vertex AI](https://console.cloud.google.com/vertex-ai/workbench/user-managed?hl=en))
 <img draggable="false" src="/image/gc_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
