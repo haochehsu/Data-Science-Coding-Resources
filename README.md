@@ -1,6 +1,6 @@
 # Data Science Coding Resources
 
-[create an anchor](#AWS)
+[create an anchor](#aws-sagemaker)
 
 
 ### Colab (https://colab.google), recommended
