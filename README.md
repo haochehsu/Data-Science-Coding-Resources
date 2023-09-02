@@ -5,7 +5,7 @@
   - [Databricks](#databricks-link)
   - [Kaggle](#kaggle-link)
 - Local notebooks
-  - [VS Code](#kaggle-httpswwwkagglecomcode)
+  - [VS Code](#vs-code-download)
   - [Jupyter Notebook](#jupyter-notebook-website)
   - [Jupyter Lab](#jupyter-lab-website)
 - Cloud instances
