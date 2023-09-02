@@ -1,9 +1,9 @@
 # Data Science Coding Resources
 
 - Online notebooks
-  - [Google Colab](#colab-httpscolabgoogle) (recommended)
-  - [Databricks](#kaggle-httpswwwkagglecomcode)
-  - [Kaggle](#kaggle-httpswwwkagglecomcode)
+  - [Google Colab](#colab-link) (recommended)
+  - [Databricks](#databricks-link)
+  - [Kaggle](#kaggle-link)
 - Local notebooks
   - [VS Code](#kaggle-httpswwwkagglecomcode)
   - [Jupyter Notebook](#jupyter-notebook-website)
