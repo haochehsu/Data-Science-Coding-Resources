@@ -4,6 +4,7 @@
   - [Google Colab](#colab-link) (recommended)
   - [Databricks](#databricks-link)
   - [Kaggle](#kaggle-link)
+  - [Deepnote](#deepnote-link)
 - Local notebooks
   - [VS Code](#vs-code-download)
   - [Jupyter Notebook](#jupyter-notebook-website)
