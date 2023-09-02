@@ -44,6 +44,20 @@
 - Runtimes limited to 9 hours.
 - AI: N/A.
 
+### Deepnote ([Link](https://deepnote.com/workspace))
+<img draggable="false" src="/image/dn_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
+
+- Real-time collaboration with multiple users.
+- Notebooks: `Python`, `R`
+- Accelerators: K80 (upgrade required)
+- Plans:
+  - Free: 2 CPUs, 5GB memory, and 5GB storage (3 collaborators).
+  - Plus (1.02/h): 4 CPUs, 16GB memory.
+  - Performance (3.97/h): 16 CPUs, 64GB memory.
+  - High memory (5/h): 16 CPUs, 128GB memory.
+  - GPU ($7.56/h): 4 CPUs, 60GB memory.
+- AI: N/A.
+
 ---
 ### VS Code ([Download](https://code.visualstudio.com/))
 <img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
