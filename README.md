@@ -8,7 +8,7 @@
 - Local notebooks
   - [Jupyter Notebook](#jupyter-notebook-website)
   - [Jupyter Lab](#jupyter-lab-website)
-  - [VS Code](#vs-code-download)
+  - [VS Code](#vs-code-download) (recommended)
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
   - [AWS: SageMaker](#aws-sagemaker)
@@ -62,6 +62,7 @@
 ---
 ### Jupyter Notebook ([Website](https://jupyter.org/))  
 <img draggable="false" src="/image/jn_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+Jupyter Notebook is a web application focused on creating and managing individual notebook documents.<br><br>
 
 1. Install Anaconda ([Download](https://www.anaconda.com/download#downloads))
 2. Open `Terminal` (Mac) or `Anaconda Prompt` (Windows)
@@ -71,6 +72,7 @@ Once the browser window opens with the notebook, click New to start a new notebo
 
 ### Jupyter Lab ([Website](https://jupyterlab.readthedocs.io/en/latest/))
 <img draggable="false" src="/image/jl_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+JupyterLab offers a more extensible and modular environment integrating notebooks, code, and data in a unified workspace.<br>
 
 1. After installing `Anaconda`, open `Terminal` (Mac) or `Anaconda Prompt` (Windows)
 2. Execute command
@@ -82,6 +84,12 @@ Once the browser window opens with the notebook, click New to start a new notebo
 
 ### VS Code ([Download](https://code.visualstudio.com/))
 <img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
+
+1. Locate the `Extensions` tab on the left vertical panel.
+2. Search and install extensions `Python` and `Jupyter`.
+   - It will automatically install the necessary dependent extensions.
+3. `File` → `New File...` → `Jupyter Notebook`
+4. Click `Select Kernel` on the top right corner → `Python Environment` → `Anaconda3 (Python)` 
 
 ---
 
