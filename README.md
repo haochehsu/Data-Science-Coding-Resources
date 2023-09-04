@@ -93,11 +93,12 @@ JupyterLab offers a more extensible and modular environment integrating notebook
 ### VS Code ([Download](https://code.visualstudio.com/))
 <img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
 
-1. Locate the `Extensions` tab on the left vertical panel.
-2. Search and install extensions `Python` and `Jupyter`.
+1. Install `Anaconda`.
+2. Locate the `Extensions` tab on the left vertical panel.
+3. Search and install extensions `Python` and `Jupyter`.
    - It will automatically install the necessary dependent extensions.
-3. `File` → `New File...` → `Jupyter Notebook`
-4. Click `Select Kernel` on the top right corner → `Python Environment` → `Anaconda3 (Python)` 
+4. `File` → `New File...` → `Jupyter Notebook`
+5. Click `Select Kernel` on the top right corner → `Python Environment` → `Anaconda3 (Python)` 
 
 ---
 
