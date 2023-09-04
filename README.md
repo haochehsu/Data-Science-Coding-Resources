@@ -204,7 +204,7 @@ These are the first *two columns* of the data:
 
 #### 5. Instrumental variable and 2-stage least squares
 
-  - `IV2SLS`
+  - `IV2SLS` (with corrected standard errors)
   
     ```py
     endog = df['Y']
