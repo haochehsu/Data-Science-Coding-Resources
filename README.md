@@ -139,87 +139,112 @@ These are the first *two columns* of the data:
 
 1. Import the libraries
 
-   ```py
-   import pandas as pd
-   import statsmodels.api as sm
-   import statsmodels.formula.api as smf
-   from statsmodels.sandbox.regression.gmm import IV2SLS
-   ```
+  ```py
+  import pandas as pd
+  import statsmodels.api as sm
+  import statsmodels.formula.api as smf
+  from statsmodels.sandbox.regression.gmm import IV2SLS
+  ```
 
 2. Read the data and store it in a data frame `df`
-
-   ```py
-   df = pd.read_csv('data.csv')
-   ```
+  
+  ```py
+  df = pd.read_csv('data.csv')
+  ```
    
 3. Linear regression
    
    $y_i= \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i\text{Variable with Space}} + \epsilon_i$
    
-   - Passing in variables
-     
-     ```sh
-     y = df['Y']
-     X = df[['X1', 'X2', 'Variable with Space']]
-      
-     X = sm.add_constant(X)
-      
-     model = sm.OLS(y, X).fit()
+  - Passing in variables
   
-     print(model.summary())
-     ```
-   - Passing in formula
+    ```py
+    y = df['Y']
+    X = df[['X1', 'X2', 'Variable with Space']]
+    
+    X = sm.add_constant(X)
+    
+    model = sm.OLS(y, X).fit()
+    
+    print(model.summary())
+
+  - Passing in formula
      
-     ```sh
-     model = smf.ols(formula='Y ~ X1 + X2 + Q("Variable with Space")', data=df).fit()
-     print(model.summary())
-     ```
+    ```py
+    model = smf.ols(formula='Y ~ X1 + X2 + Q("Variable with Space")', data=df).fit()
+    print(model.summary())
+    ```
    
 4. Linear regression with categorical data
   
-   - Passing in variables
-     
-     ```sh
-     dummies = pd.get_dummies(df['Category'], drop_first=True, sparse=True, prefix="Category")
-     X = pd.concat([df[['X1']], dummies], axis=1)
-
-     X = sm.add_constant(X)
-
-     model = sm.OLS(df['Y'], X).fit()
-     print(model.summary())
-     ```
-   - Passing in formula
-     
-     ```sh
-     model = smf.ols(formula='Y ~ X1 + C(Category)', data=df).fit()
-     print(model.summary())
-     ```
+  - Passing in variables
+  
+    ```sh
+    dummies = pd.get_dummies(df['Category'], drop_first=True, sparse=True, prefix="Category")
+    X = pd.concat([df[['X1']], dummies], axis=1)
+    
+    X = sm.add_constant(X)
+    
+    model = sm.OLS(df['Y'], X).fit()
+    print(model.summary())
+    ```
+    
+  - Passing in formula
+  
+    ```sh
+    model = smf.ols(formula='Y ~ X1 + C(Category)', data=df).fit()
+    print(model.summary())
+    ```
 
 5. Instrumental variable and 2-stage least squares
 
-   - `IV2SLS`
+  - `IV2SLS`
   
-     ```py
-     endog = df['Y']
-     exog = sm.add_constant(df[['X1']])
-     
-     instrument = sm.add_constant(df[['Instrument']])
-     
-     model = IV2SLS(endog, exog, instrument=instrument).fit()
-     print(model.summary())
-     ```
+    ```py
+    endog = df['Y']
+    exog = sm.add_constant(df[['X1']])
+    
+    instrument = sm.add_constant(df[['Instrument']])
+    
+    model = IV2SLS(endog, exog, instrument=instrument).fit()
+    print(model.summary())
+    ```
+    
+  - 2-stage least squares
+  
+    ```py
+    # First Stage
+    X_first_stage = sm.add_constant(df[['Instrument']])
+    model_first_stage = sm.OLS(df['X1'], X_first_stage).fit()
+    df['X1_hat'] = model_first_stage.predict(X_first_stage)
+    
+    # Second Stage
+    X_second_stage = sm.add_constant(df['X1_hat'])
+    model_second_stage = sm.OLS(df['Y'], X_second_stage).fit()
+    
+    print(model_second_stage.summary())
+    ```
 
-   - 2-stage least squares
+6. Regression options
 
-     ```py
-     # First Stage
-     X_first_stage = sm.add_constant(df[['Instrument']])
-     model_first_stage = sm.OLS(df['X1'], X_first_stage).fit()
-     df['X1_hat'] = model_first_stage.predict(X_first_stage)
-      
-     # Second Stage
-     X_second_stage = sm.add_constant(df['X1_hat'])
-     model_second_stage = sm.OLS(df['Y'], X_second_stage).fit()
+   - Clustered standard errors
+     - Cluster based on the `Category` variable: pass the arguments to the `.fit()` method.
 
-     print(model_second_stage.summary())
-     ```
+       ```py
+       .fit(cov_type='cluster', cov_kwds={'groups': df['Category']})
+       ```
+
+   - Robust standard error
+     - Debias the covariance estimator by using a degree of freedom adjustment to obtain the same robust standard error as in STATA.
+       
+       1. In `sm.ols`
+          
+          ```py
+          .fit(cov_type='HC1')
+          ```
+
+       2. In `IV2SLS`
+
+          ```py
+          .fit(debiased=True)
+          ```
