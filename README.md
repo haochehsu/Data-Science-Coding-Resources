@@ -85,7 +85,7 @@ JupyterLab offers a more extensible and modular environment integrating notebook
 1. After installing `Anaconda`, open `Terminal` (Mac) or `Anaconda Prompt` (Windows)
 2. Execute command
    
-   ```
+   ```sh
    conda install -c conda-forge jupyterlab
    ```
 3. Type the command `jupyter lab`
@@ -126,3 +126,100 @@ JupyterLab offers a more extensible and modular environment integrating notebook
      - 2 CPUs, 4GB memory, 125GB storage.
   3. [Pricing](https://aws.amazon.com/sagemaker/pricing/) for other instance configurations.
 
+---
+
+### Regression
+
+These are the first *two columns* of the data:
+
+|     Y    |     X1    |     X2    | Category | Variable with Space | Instrument |
+|:--------:|:---------:|:---------:|:--------:|:-------------------:|------------|
+| 0.129082 |  0.496714 | -0.349898 |     B    |      -0.828995      | -1.415371  |
+| 1.857186 | -0.138264 |  0.350462 |     B    |      -0.560181      | -0.420645  |
+
+1. Import the libraries
+
+   ```py
+   import pandas as pd
+   import statsmodels.api as sm
+   import statsmodels.formula.api as smf
+   from statsmodels.sandbox.regression.gmm import IV2SLS
+   ```
+
+2. Read the data and store it in a data frame `df`
+
+   ```py
+   df = pd.read_csv('data.csv')
+   ```
+   
+3. Linear regression
+   
+   $y_i= \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i\text{Variable with Space}} + \epsilon_i$
+   
+   - Passing in variables
+     
+     ```sh
+     y = df['Y']
+     X = df[['X1', 'X2', 'Variable with Space']]
+      
+     X = sm.add_constant(X)
+      
+     model = sm.OLS(y, X).fit()
+  
+     print(model.summary())
+     ```
+   - Passing in formula
+     
+     ```sh
+     model = smf.ols(formula='Y ~ X1 + X2 + Q("Variable with Space")', data=df).fit()
+     print(model.summary())
+     ```
+   
+4. Linear regression with categorical data
+  
+   - Passing in variables
+     
+     ```sh
+     dummies = pd.get_dummies(df['Category'], drop_first=True, sparse=True, prefix="Category")
+     X = pd.concat([df[['X1']], dummies], axis=1)
+
+     X = sm.add_constant(X)
+
+     model = sm.OLS(df['Y'], X).fit()
+     print(model.summary())
+     ```
+   - Passing in formula
+     
+     ```sh
+     model = smf.ols(formula='Y ~ X1 + C(Category)', data=df).fit()
+     print(model.summary())
+     ```
+
+5. Instrumental variable and 2-stage least squares
+
+   - `IV2SLS`
+  
+     ```py
+     endog = df['Y']
+     exog = sm.add_constant(df[['X1']])
+     
+     instrument = sm.add_constant(df[['Instrument']])
+     
+     model = IV2SLS(endog, exog, instrument=instrument).fit()
+     print(model.summary())
+     ```
+
+   - 2-stage least squares
+
+     ```py
+     # First Stage
+     X_first_stage = sm.add_constant(df[['Instrument']])
+     model_first_stage = sm.OLS(df['X1'], X_first_stage).fit()
+     df['X1_hat'] = model_first_stage.predict(X_first_stage)
+      
+     # Second Stage
+     X_second_stage = sm.add_constant(df['X1_hat'])
+     model_second_stage = sm.OLS(df['Y'], X_second_stage).fit()
+
+     print(model_second_stage.summary())
+     ```
