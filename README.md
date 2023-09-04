@@ -137,7 +137,7 @@ These are the first *two columns* of the data:
 | 0.129082 |  0.496714 | -0.349898 |     B    |      -0.828995      | -1.415371  |
 | 1.857186 | -0.138264 |  0.350462 |     B    |      -0.560181      | -0.420645  |
 
-1. Import the libraries
+#### 1. Import the libraries
 
   ```py
   import pandas as pd
