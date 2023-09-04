@@ -12,6 +12,12 @@
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
   - [AWS: SageMaker](#aws-sagemaker)
+- Regression
+  - [Import the libraries](#1-import-the-libraries)
+  - [Read the data](#2-read-the-data-and-store-it-in-a-data-frame-df)
+  - [Linear regression](#3-linear-regression)
+  - [Linear regression with categorical data](#4-linear-regression-with-categorical-data)
+  - [Instrumental variable and 2-stage least squares](#5-instrumental-variable-and-2-stage-least-squares)
 
 ---
 
