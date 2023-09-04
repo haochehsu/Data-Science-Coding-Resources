@@ -243,14 +243,14 @@ These are the first *two columns* of the data:
    - Robust standard error
      - Debias the covariance estimator by using a degree of freedom adjustment to obtain the same robust standard error as in STATA.
        
-       1. In `sm.ols`
-          
-          ```py
-          .fit(cov_type='HC1')
-          ```
-
-       2. In `IV2SLS`
+       1. In `IV2SLS`
 
           ```py
           .fit(debiased=True)
+          ```
+          
+       2. In `sm.ols`
+          
+          ```py
+          .fit(cov_type='HC1')
           ```
