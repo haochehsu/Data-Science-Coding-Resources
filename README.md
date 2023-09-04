@@ -70,6 +70,14 @@ Jupyter Notebook is a web application focused on creating and managing individua
  
 Once the browser window opens with the notebook, click New to start a new notebook.
 
+**Install Jupyter Notebook extensions**
+
+Go to `Terminal` (Mac) or `Anaconda Prompt` (Windows):
+
+```
+conda install -c conda-forge jupyter_contrib_nbextensions
+```
+
 ### Jupyter Lab ([Website](https://jupyterlab.readthedocs.io/en/latest/))
 <img draggable="false" src="/image/jl_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 JupyterLab offers a more extensible and modular environment integrating notebooks, code, and data in a unified workspace.<br>
