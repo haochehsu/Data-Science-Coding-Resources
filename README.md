@@ -98,7 +98,10 @@ JupyterLab offers a more extensible and modular environment integrating notebook
 3. Search and install extensions `Python` and `Jupyter`.
    - It will automatically install the necessary dependent extensions.
 4. `File` → `New File...` → `Jupyter Notebook`
-5. Click `Select Kernel` on the top right corner → `Python Environment` → `Anaconda3 (Python)` 
+5. Click `Select Kernel` on the top right corner → `Python Environment` → `Anaconda3 (Python)`
+
+AI: `GitHub Copilot` (extension)
+  - Provides autocomplete-style suggestions from an AI pair programmer as you code. 
 
 ---
 
