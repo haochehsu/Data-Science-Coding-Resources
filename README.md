@@ -6,9 +6,9 @@
   - [Kaggle](#kaggle-link)
   - [Deepnote](#deepnote-link)
 - Local notebooks
-  - [VS Code](#vs-code-download)
   - [Jupyter Notebook](#jupyter-notebook-website)
   - [Jupyter Lab](#jupyter-lab-website)
+  - [VS Code](#vs-code-download)
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
   - [AWS: SageMaker](#aws-sagemaker)
@@ -60,14 +60,28 @@
 - AI: N/A.
 
 ---
-### VS Code ([Download](https://code.visualstudio.com/))
-<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
-
 ### Jupyter Notebook ([Website](https://jupyter.org/))  
 <img draggable="false" src="/image/jn_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
 
+1. Install Anaconda ([Download](https://www.anaconda.com/download#downloads))
+2. Open `Terminal` (Mac) or `Anaconda Prompt` (Windows)
+3. Type the command `jupyter notebook`
+ 
+Once the browser window opens with the notebook, click New to start a new notebook.
+
 ### Jupyter Lab ([Website](https://jupyterlab.readthedocs.io/en/latest/))
 <img draggable="false" src="/image/jl_icon.png" alt="" style="width: 6%; padding-bottom:5px; pointer-events:none"/>
+
+1. After installing `Anaconda`, open `Terminal` (Mac) or `Anaconda Prompt` (Windows)
+2. Execute command
+   
+   ```
+   conda install -c conda-forge jupyterlab
+   ```
+3. Type the command `jupyter lab`
+
+### VS Code ([Download](https://code.visualstudio.com/))
+<img draggable="false" src="/image/vscode_icon.png" alt="" style="width: 5%; padding-bottom:5px; pointer-events:none"/>
 
 ---
 
