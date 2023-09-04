@@ -80,7 +80,7 @@ Once the browser window opens with the notebook, click New to start a new notebo
 
 Go to `Terminal` (Mac) or `Anaconda Prompt` (Windows):
 
-```
+```sh
 conda install -c conda-forge jupyter_contrib_nbextensions
 ```
 
