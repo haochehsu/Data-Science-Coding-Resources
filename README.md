@@ -146,13 +146,13 @@ These are the first *two columns* of the data:
   from statsmodels.sandbox.regression.gmm import IV2SLS
   ```
 
-2. Read the data and store it in a data frame `df`
+#### 2. Read the data and store it in a data frame `df`
   
   ```py
   df = pd.read_csv('data.csv')
   ```
    
-3. Linear regression
+#### 3. Linear regression
    
    $y_i= \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i\text{Variable with Space}} + \epsilon_i$
    
@@ -175,7 +175,7 @@ These are the first *two columns* of the data:
     print(model.summary())
     ```
    
-4. Linear regression with categorical data
+#### 4. Linear regression with categorical data
   
   - Passing in variables
   
@@ -196,7 +196,7 @@ These are the first *two columns* of the data:
     print(model.summary())
     ```
 
-5. Instrumental variable and 2-stage least squares
+#### 5. Instrumental variable and 2-stage least squares
 
   - `IV2SLS`
   
@@ -225,7 +225,7 @@ These are the first *two columns* of the data:
     print(model_second_stage.summary())
     ```
 
-6. Regression options
+#### 6. Other options
 
    - Clustered standard errors
      - Cluster based on the `Category` variable: pass the arguments to the `.fit()` method.
