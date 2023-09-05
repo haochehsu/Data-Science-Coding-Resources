@@ -143,6 +143,8 @@ These are the first *two columns* of the data:
 | 0.129082 |  0.496714 | -0.349898 |     B    |      -0.828995      | -1.415371  |
 | 1.857186 | -0.138264 |  0.350462 |     B    |      -0.560181      | -0.420645  |
 
+The `Category` variable includes three categories: `A`, `B`, and `C`. The variable named `Variable with Space` has spaces in its name. `Y` is the dependent/outcome variable.
+
 #### 1. Import the libraries
 
   ```py
@@ -160,7 +162,7 @@ These are the first *two columns* of the data:
    
 #### 3. Linear regression
    
-   $y_i= \beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + \beta_3x_{i\text{Variable with Space}} + \epsilon_i$
+   $y_i= \beta_0 + \beta_1x_{1i} + \beta_2x_{2i} + \beta_3x_{\text{variable with space}, i} + \epsilon_i$
    
   - Passing in variables
   
@@ -182,6 +184,8 @@ These are the first *two columns* of the data:
     ```
    
 #### 4. Linear regression with categorical data
+
+$y_i= \beta_0 + \beta_1x_{i} + \beta_2 \cdot I\lbrace \text{Category} = A\rbrace_i + \beta_3 \cdot I\lbrace \text{Category} = B\rbrace_i + \beta_4 \cdot I\lbrace \text{Category} = C\rbrace_i + \epsilon_i$
   
   - Passing in variables
   
@@ -203,6 +207,12 @@ These are the first *two columns* of the data:
     ```
 
 #### 5. Instrumental variable and 2-stage least squares
+
+Suppose $x_{1i}$ is correlated with $\epsilon_i$ (endogenous $x_{1i}$):
+
+$x_{1i} = \alpha_0 + \alpha_{1i} \cdot \text{Instrument}_i + u_i$
+
+$y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
 
   - `IV2SLS` (with corrected standard errors)
   
@@ -254,3 +264,14 @@ These are the first *two columns* of the data:
           ```py
           .fit(cov_type='HC1')
           ```
+          
+  - Regression without an intercept
+    
+    - In `IV2SLS`: don't `sm.add_constant()`.
+          
+    - In `sm.ols`: add `-1` in the formula
+   
+      ```
+      model = smf.ols(formula='Y ~ X1 + X2 - 1', data=df).fit()
+      print(model.summary())
+      ```
