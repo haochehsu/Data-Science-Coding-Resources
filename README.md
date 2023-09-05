@@ -185,7 +185,7 @@ The `Category` variable includes three categories: `A`, `B`, and `C`. The variab
    
 #### 4. Linear regression with categorical data
 
-$y_i= \beta_0 + \beta_1x_{i} + \beta_2 \cdot I\lbrace \text{Category} = A\rbrace_i + \beta_3 \cdot I\lbrace \text{Category} = B\rbrace_i + \beta_4 \cdot I\lbrace \text{Category} = C\rbrace_i + \epsilon_i$
+$y_i= \beta_0 + \beta_1x_{i} + \beta_2 \cdot \mathbb{1}\lbrace \text{Category} = A\rbrace_i + \beta_3 \cdot \mathbb{1}\lbrace \text{Category} = B\rbrace_i + \beta_4 \cdot \mathbb{1}\lbrace \text{Category} = C\rbrace_i + \epsilon_i$
   
   - Passing in variables
   
