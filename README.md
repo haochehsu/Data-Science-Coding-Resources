@@ -208,7 +208,7 @@ $y_i= \beta_0 + \beta_1x_{i} + \beta_2 \cdot \mathbb{1}\lbrace \text{Category} =
 
 #### 5. Instrumental variable and 2-stage least squares
 
-Suppose $x_{1i}$ is correlated with $\epsilon_i$ (endogenous $x_{1i}$):
+Suppose $x_{1i}$ is correlated with $\epsilon_i$ (endogenous $x_{1i}$). `Instrument` is correlated with $x_{1i}$ but uncorrelated with $\epsilon_i$:
 
 $x_{1i} = \alpha_0 + \alpha_{1i} \cdot \text{Instrument}_i + u_i$
 
