@@ -226,7 +226,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
     print(model.summary())
     ```
     
-  - 2-stage least squares
+  - `sm.OLS` (passing in variable): manual 2-stage least squares
   
     ```py
     # First Stage
@@ -259,7 +259,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
           .fit(debiased=True)
           ```
           
-       2. In `sm.ols`
+       2. In `sm.OLS` (passing in variable) and `smf.ols` (passing in formula)
           
           ```py
           .fit(cov_type='HC1')
@@ -269,7 +269,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
     
     - In `IV2SLS`: don't `sm.add_constant()`.
           
-    - In `sm.ols`: add `-1` in the formula
+    - In `smf.ols`: add `-1` in the formula
    
       ```
       model = smf.ols(formula='Y ~ X1 + X2 - 1', data=df).fit()
