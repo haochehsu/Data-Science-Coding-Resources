@@ -269,7 +269,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
     
     - In `IV2SLS`: don't `sm.add_constant()`.
           
-    - In `smf.ols`: add `-1` in the formula
+    - In `smf.ols` (passing in formula): add `-1` in the formula
    
       ```
       model = smf.ols(formula='Y ~ X1 + X2 - 1', data=df).fit()
