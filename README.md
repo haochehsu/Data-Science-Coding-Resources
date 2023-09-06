@@ -154,7 +154,7 @@ The `Category` variable includes three categories: `A`, `B`, and `C`. The variab
   from statsmodels.sandbox.regression.gmm import IV2SLS
   ```
 
-#### 2. Read the data and store it in a data frame `df`
+#### 2. Read the [data](https://github.com/haochehsu/Data-Science-Coding-Resources/blob/main/data.csv) and store it in a data frame `df`
   
   ```py
   df = pd.read_csv('data.csv')
