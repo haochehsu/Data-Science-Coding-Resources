@@ -298,24 +298,16 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
   from statsmodels.tools.tools import add_constant
   ```
 
-#### 2. Read the [data](https://github.com/haochehsu/Data-Science-Coding-Resources/blob/main/data.csv) and store it in a data frame `df`
+#### 2. Read the [data](https://github.com/haochehsu/Data-Science-Coding-Resources/blob/main/panel_data.csv) and store it in a data frame `df`
   
   ```py
   df = pd.read_csv('panel_data.csv')
   ```
 
-> [!NOTE]
-> Highlights information that users should take into account, even when skimming.
-
-> [!NOTE]
-> Panel data is a cross-sectional time-series data, refers to data that tracks the same individuals, firms, or entities over multiple time periods. It combines features of both cross-sectional data (observations at a single point in time) and time-series data (observations of a single entity over multiple time points). Panel data allows for studying dynamics, individual heterogeneity, and controlling for unobserved characteristics that remain constant over time.
-
-
-
-
-
-
+> [!Panel data]
+> Combining features of both **cross-sectional** data (observations at a single point in time) and **time-series** data (observations of a single entity across multiple time points), this data tracks groups of entities, like people or firms, over several time periods. It can be used to analyze individual heterogeneity and provide control for unobserved characteristics, potentially addressing endogenous concerns by accounting for factors that remain consistent over time.
 
 #### 1. Pooled model
 
-- 
+  $Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}$
+
