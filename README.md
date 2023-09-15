@@ -18,7 +18,8 @@
   - [Linear regression](#3-linear-regression)
   - [Linear regression with categorical data](#4-linear-regression-with-categorical-data)
   - [Instrumental variable and 2-stage least squares](#5-instrumental-variable-and-2-stage-least-squares)
-
+- Panel Data
+  
 ---
 
 ### Colab ([Link](https://colab.google))
@@ -275,3 +276,46 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
       model = smf.ols(formula='Y ~ X1 + X2 - 1', data=df).fit()
       print(model.summary())
       ```
+      
+---
+
+### Panel Data
+
+#### 1. Install the library
+
+  ```python
+  pip install linearmodels
+  ```
+
+#### 2. Import the libraries
+
+  ```py
+  import pandas as pd
+  from linearmodels.panel import PooledOLS
+  from linearmodels.panel import RandomEffects
+  
+  from statsmodels.api import OLS
+  from statsmodels.tools.tools import add_constant
+  ```
+
+#### 2. Read the [data](https://github.com/haochehsu/Data-Science-Coding-Resources/blob/main/data.csv) and store it in a data frame `df`
+  
+  ```py
+  df = pd.read_csv('panel_data.csv')
+  ```
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!NOTE]
+> Panel data is a cross-sectional time-series data, refers to data that tracks the same individuals, firms, or entities over multiple time periods. It combines features of both cross-sectional data (observations at a single point in time) and time-series data (observations of a single entity over multiple time points). Panel data allows for studying dynamics, individual heterogeneity, and controlling for unobserved characteristics that remain constant over time.
+
+
+
+
+
+
+
+#### 1. Pooled model
+
+- 
