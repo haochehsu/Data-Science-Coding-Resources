@@ -308,8 +308,8 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
 > Panel data combines features of both **cross-sectional** data (observations at a single point in time) and **time-series** data (observations of a single entity across multiple time points), this data tracks groups of entities, like people or firms, over several time periods.
 > 
 > It can be used to analyze individual heterogeneity and provide control for unobserved characteristics, potentially addressing endogenous concerns by accounting for factors that remain consistent over time.
->
-> Each entity $i$ is observed over $t$ periods.
+
+Each entity $i$ is observed over $t$ periods.
 
 #### 1. Pooled model
 
