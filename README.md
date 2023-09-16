@@ -315,3 +315,21 @@ Each entity $i$ is observed over $t$ periods.
 
   $Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}$
 
+#### 2. Fixed-Effects Model
+
+  $Y_{it} = \alpha_i + \beta_1 X_{it} + \epsilon_{it}$
+
+#### 3. First-Difference model
+
+\(\overline{Y}\)
+
+  $\Delta Y_{it} = \beta_1 \Delta X_{it} + \Delta\epsilon_{it}$
+
+#### 4. Between Model
+
+  $\widebar{Y}_{it} = \beta_0 + \beta_1 \widebar{X}_{i} + \overline{\epsilon}_{it}$
+
+#### 5. Random Effects model
+
+  $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$
+
