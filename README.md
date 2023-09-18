@@ -315,21 +315,97 @@ Each entity $i$ is observed over $t$ periods.
 
   $Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}$
 
+  Pools the data and runs a regression.
+
+  ```python
+  pooled = PooledOLS(df.Y, df[['X']]).fit()
+  print(pooled)
+  ```
+
 #### 2. Fixed-Effects Model
 
   $Y_{it} = \alpha_i + \beta_1 X_{it} + \epsilon_{it}$
 
-#### 3. First-Difference model
+  $\alpha_i$ captures the unobserved, time-invariant individual effects.
 
-\(\overline{Y}\)
+  > [!IMPORTANT]
+  > In panel data, heterogeneity across entities (e.g., individuals, firms) can lead to omitted variable bias. Time-invariant firm characteristics, such as *company culture*, are often unobservable to econometricians. These uncontrolled, unobserved characteristics $\alpha_i$ are absorbed into the error term and can be **correlated** with other observed firm characteristics $X_{it}$. To account for potential endogeneity, we add/control a fixed effect into the model.
 
-  $\Delta Y_{it} = \beta_1 \Delta X_{it} + \Delta\epsilon_{it}$
+There are 3 solutions:
 
-#### 4. Between Model
+##### A. Add fixed effects
 
-  $\widebar{Y}_{it} = \beta_0 + \beta_1 \widebar{X}_{i} + \overline{\epsilon}_{it}$
+  ```python
+  FE = PanelOLS(df.Y, df[['X']], entity_effects=True).fit()
+  print(FE)
+  ```
 
-#### 5. Random Effects model
+  This is equivalent to running a **dummy variable regression**:
 
-  $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$
+  ```python
+  # generate dummy variables and add them to the dataframe
+  dummies = pd.get_dummies(df.reset_index()['id'], drop_first=True).set_index(df.index)
+  df_with_dummies = pd.concat([df, dummies], axis=1)
+
+  # add an intercept
+  X = add_constant(pd.concat([df_with_dummies.X, df_with_dummies.iloc[:, 3:]], axis=1))
+
+  dummy_regression = OLS(df_with_dummies.Y, X.astype(float)).fit()
+  print(dummy_regression.summary())
+  ```
+
+##### B. Within transformation (within estimator)
+
+  Subtract the average (taken across time) of each variable from the variable itself to eliminate fixed effects.
+
+  ```python
+  grouped_means = df.groupby('id').mean()
+  df_with_means = df.merge(grouped_means, on='id', suffixes=('', '_mean'))
+  df_with_means['Y_within'] = df_with_means['Y'] - df_with_means['Y_mean']
+  df_with_means['X_within'] = df_with_means['X'] - df_with_means['X_mean']
+  
+  X = add_constant(df_merged['X_within'])
+  model = sm.OLS(df_merged['Y_within'], X).fit()
+  print(model.summary())
+  ```
+
+##### C. First-Difference model
+
+  $\Delta Y_{it} = \beta_1 \Delta X_{it} + \Delta\epsilon_{it}$ where $\Delta A_{it} \equiv A_{it}-A_{i, t-1}$
+
+  If we have a **balanced panel** (all entities have observations for all periods), first differencing eliminates the fixed effect. This allows us to focus on only the **changes** within each entity over time, effectively removing any time-invariant characteristics.
+
+  ```python
+  df_diff = df.groupby('id').diff().dropna()
+  first_diff = PanelOLS(df_diff.Y, df_diff[['X']], entity_effects=False).fit()
+  print(first_diff)
+  ```
+
+#### 3. Random Effects model
+
+  $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$
+
+  > [!IMPORTANT]
+  > Alternatively, the random effect model assumes that the time-invariant entity effect (fixed effects) $\alpha_i$ is a random variable that is **uncorrelated** with $X_{it}$.
+
+  heteroscedasticity We use generalized least squares (GLS) to estimate the model.
+  
+  ```python
+  RE = RandomEffects(df.Y, df[['X']]).fit()
+  print(RE)
+  ```
+
+#### 4. Between Model (between estimator)
+
+  ![between](https://latex.codecogs.com/svg.image?\inline&space;\overline{Y}_{i}=\beta_0&plus;\beta_1\overline{X}_i&plus;\overline{\epsilon}_{i})
+
+  ```python
+  df_mean = df.groupby('id').mean().reset_index()
+  X_mean = df_mean[['X']]
+  y_mean = df_mean['Y']
+  between_model = OLS(y_mean, X_mean).fit()
+  print(between_model.summary())
+  ```
+
+
 
