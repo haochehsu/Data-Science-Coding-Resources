@@ -341,7 +341,7 @@ Each entity $i$ is observed over $t$ periods.
   > [!IMPORTANT]
   > In panel data, heterogeneity across entities (e.g., individuals, firms) can lead to omitted variable bias. Time-invariant firm characteristics, such as *company culture*, are often unobservable to econometricians. These uncontrolled, unobserved characteristics $\alpha_i$ are absorbed into the error term and can be **correlated** with other observed firm characteristics $X_{it}$. To account for potential endogeneity, we add/control a fixed effect into the model.
 
-There are 3 solutions:
+The fixed effects models use the "within variation" (variation of an entity over time):
 
 ##### A. Add fixed effects
 
@@ -402,10 +402,10 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
 
 #### 6. Random Effects model
 
-  $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$
+  $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$ and $\sigma_{\alpha}^2$ is the variance of the entity specific effect.
 
   > [!IMPORTANT]
-  > The random effect model assumes that the time-invariant entity effect (fixed effects) $\alpha_i$ is a random variable that is **uncorrelated** with $X_{it}$.
+  > The random effect model assumes that the time-invariant entity-specific effect $\alpha_i$ (e.g. company culture) is a random variable drawn from a normal distribution and is **uncorrelated** with $X_{it}$. The model leverages both within and between variations.
 
   Based on the assumed distribution of the $\alpha_i$'s, heteroscedasticity violates the OLS assumptions. Therefore, we use generalized least squares (GLS) to estimate the model.
   
@@ -418,7 +418,7 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
 
 The test is used to determine whether to use **fixed effects** or a **random effects** model in panel data analysis.
 
-- $H_0$: Errors are uncorrelated with the regressors. Random effects model is consistent and there are no differences in the coefficients of the fixed effects and random effects model.
+- $H_0$: Errors are uncorrelated with the regressors. The random effects model is consistent and there are no differences in the coefficients of the fixed effects and random effects model.
 - Hausman test statistics:
   $H = \left(\beta_{FE} - \beta_{RE}\right)'\times \left[\text{Var}(\beta_{FE})-\text{Var}(\beta_{RE})\right]^{-1}\times \left(\beta_{FE} - \beta_{RE}\right)$ where $\beta_{FE}$ and $\beta_{RE}$ are vectors of coefficients obtained from the two models.
 
@@ -445,7 +445,7 @@ print("p-value:", p_value)
 
   ![between](https://latex.codecogs.com/svg.image?\inline&space;\overline{Y}_{i}=\beta_0&plus;\beta_1\overline{X}_i&plus;\overline{\epsilon}_{i})
 
-The model examines the cross-sectional variation in the data by averaging each variable over time for entity $i$.
+The model examines the "between variation" (variation across entities/cross-sectional at a particular point in time) in the data by averaging each variable over time for entity $i$.
 
   ```python
   df_mean = df.groupby('id').mean().reset_index()
