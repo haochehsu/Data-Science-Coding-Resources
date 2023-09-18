@@ -1,15 +1,15 @@
 # Data Science Coding Resources
 
-- Online notebooks
+- Online Notebooks
   - [Google Colab](#colab-link) (recommended)
   - [Databricks](#databricks-link)
   - [Kaggle](#kaggle-link)
   - [Deepnote](#deepnote-link)
-- Local notebooks
+- Local Notebooks
   - [Jupyter Notebook](#jupyter-notebook-website)
   - [Jupyter Lab](#jupyter-lab-website)
   - [VS Code](#vs-code-download) (recommended)
-- Cloud instances
+- Cloud Instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
   - [AWS: SageMaker](#aws-sagemaker)
 - Linear Regression
@@ -23,14 +23,14 @@
   - [Import the libraries](#2-read-the-data-and-store-it-in-a-data-frame-df)
   - [Read the data](#3-read-the-data-and-store-it-in-a-data-frame-df)
   - [Pooled model](#4-pooled-model)
-  - [Fixed-Effects Model](#5-fixed-effects-model)
-    - [Add fixed effects](#a-add-fixed-effects)
+  - [Fixed-effects models](#5-fixed-effects-model)
+    - [Adding entity-fixed effects](#a-add-fixed-effects)
     - [Within transformation](#b-within-transformation-within-estimator)
-    - [First-Difference model](#c-first-difference-model)
+    - [First-difference model](#c-first-difference-model)
     - [Adding time-fixed effects](#d-adding-time-fixed-effects)
-  - [Random Effects model](#6-random-effects-model)
+  - [Random effects model](#6-random-effects-model)
     - [Hausman test](#hausman-test)
-  - [Between Model](#7-between-model-between-estimator)
+  - [Between model](#7-between-model-between-estimator)
   
 ---
 
@@ -334,7 +334,7 @@ Each entity $i$ is observed over $t$ periods.
   print(pooled)
   ```
 
-#### 5. Fixed-Effects Model
+#### 5. Fixed-effects models
 
   $Y_{it} = \alpha_i + \beta_1 X_{it} + \epsilon_{it}$ where $\alpha_i$ captures the unobserved, time-invariant individual effects.
 
@@ -343,7 +343,7 @@ Each entity $i$ is observed over $t$ periods.
 
 The fixed-effects models use the "within variation" (variation of an entity over time):
 
-##### A. Add fixed effects
+##### A. Adding entity-fixed effects
 
   ```python
   FE = PanelOLS(df.Y, df[['X']], entity_effects=True).fit()
@@ -379,7 +379,7 @@ The fixed-effects models use the "within variation" (variation of an entity over
   print(model.summary())
   ```
 
-##### C. First-Difference model
+##### C. First-difference model
 
   $\Delta Y_{it} = \beta_1 \Delta X_{it} + \Delta\epsilon_{it}$ where $\Delta A_{it} \equiv A_{it}-A_{i, t-1}$
 
@@ -400,7 +400,7 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
   print(FE_with_time_effects)
   ```
 
-#### 6. Random Effects model
+#### 6. Random effects model
 
   $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$ and $\sigma_{\alpha}^2$ is the variance of the entity specific effect.
 
@@ -441,7 +441,7 @@ print("Hausman Test Statistic:", hausman_statistics)
 print("p-value:", p_value)
 ```
 
-#### 7. Between Model (between estimator)
+#### 7. Between model (between estimator)
 
   ![between](https://latex.codecogs.com/svg.image?\inline&space;\overline{Y}_{i}=\beta_0&plus;\beta_1\overline{X}_i&plus;\overline{\epsilon}_{i})
 
