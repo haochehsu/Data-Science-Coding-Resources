@@ -32,7 +32,7 @@
     - [Hausman test](#hausman-test)
   - [Between model](#7-between-model-between-estimator)
 - Statistical Time Series Forecasting
-  - [Import the libraries](#1-import-the-libraries)
+  - [Import the libraries](#1-import-the-libraries-1)
   - [Autoregressive model](#2-autoregressive-model)
   - [Moving average model](#3-moving-average-model)
   - [Autoregressive moving average model](#4-autoregressive-moving-average-model)
