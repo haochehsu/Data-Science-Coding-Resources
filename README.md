@@ -339,7 +339,7 @@ Each entity $i$ is observed over $t$ periods.
   $Y_{it} = \alpha_i + \beta_1 X_{it} + \epsilon_{it}$ where $\alpha_i$ captures the unobserved, time-invariant individual effects.
 
   > [!IMPORTANT]
-  > In panel data, heterogeneity across entities (e.g., individuals, firms) can lead to omitted variable bias. Time-invariant firm characteristics, such as *company culture*, are often unobservable to econometricians. These uncontrolled, unobserved characteristics [alpha](https://latex.codecogs.com/svg.image?\inline&space;\alpha_{i}) are absorbed into the error term and can be **correlated** with other observed firm characteristics ![X](https://latex.codecogs.com/svg.image?\inline&space;X_{it}). To account for potential endogeneity, we add/control a fixed effect into the model.
+  > In panel data, heterogeneity across entities (e.g., individuals, firms) can lead to omitted variable bias. Time-invariant firm characteristics, such as *company culture*, are often unobservable to econometricians. These uncontrolled, unobserved characteristics are absorbed into the error term and can be **correlated** with other observed firm characteristics. To account for potential endogeneity, we add/control a fixed effect into the model.
 
 The fixed effects models use the "within variation" (variation of an entity over time):
 
@@ -405,7 +405,7 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
   $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$ and $\sigma_{\alpha}^2$ is the variance of the entity specific effect.
 
   > [!IMPORTANT]
-  > The random effect model assumes that the time-invariant entity-specific effect $\alpha_i$ (e.g. company culture) is a random variable drawn from a normal distribution and is **uncorrelated** with $X_{it}$. The model leverages both within and between variations.
+  > The random effect model assumes that the time-invariant entity-specific effect (e.g. company culture) is a random variable drawn from a normal distribution and is **uncorrelated** with the other characteristics. The model leverages both within and between variations.
 
   Based on the assumed distribution of the $\alpha_i$'s, heteroscedasticity violates the OLS assumptions. Therefore, we use generalized least squares (GLS) to estimate the model.
   
