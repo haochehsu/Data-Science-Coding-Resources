@@ -14,11 +14,16 @@
   - [AWS: SageMaker](#aws-sagemaker)
 - Regression
   - [Import the libraries](#1-import-the-libraries)
-  - [Read the data](#2-read-the-data-and-store-it-in-a-data-frame-df)
+  - [Read the data](#2-import-the-libraries)
   - [Linear regression](#3-linear-regression)
   - [Linear regression with categorical data](#4-linear-regression-with-categorical-data)
   - [Instrumental variable and 2-stage least squares](#5-instrumental-variable-and-2-stage-least-squares)
 - Panel Data
+  - [Install the library](#1-install-the-library)
+  - [Import the libraries](#2-read-the-data-and-store-it-in-a-data-frame-df)
+  - [Linear regression](#3-linear-regression)
+  - [Linear regression with categorical data](#4-linear-regression-with-categorical-data)
+  - [Instrumental variable and 2-stage least squares](#5-instrumental-variable-and-2-stage-least-squares)
   
   
 ---
@@ -299,7 +304,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
   from statsmodels.tools.tools import add_constant
   ```
 
-#### 2. Read the [data](https://github.com/haochehsu/Data-Science-Coding-Resources/blob/main/panel_data.csv) and store it in a data frame `df`
+#### 3. Read the [data](https://github.com/haochehsu/Data-Science-Coding-Resources/blob/main/panel_data.csv) and store it in a data frame `df`
   
   ```py
   df = pd.read_csv('panel_data.csv')
@@ -312,7 +317,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
 
 Each entity $i$ is observed over $t$ periods.
 
-#### 1. Pooled model
+#### 4. Pooled model
 
   $Y_{it} = \beta_0 + \beta_1 X_{it} + \epsilon_{it}$
 
@@ -323,7 +328,7 @@ Each entity $i$ is observed over $t$ periods.
   print(pooled)
   ```
 
-#### 2. Fixed-Effects Model
+#### 5. Fixed-Effects Model
 
   $Y_{it} = \alpha_i + \beta_1 X_{it} + \epsilon_{it}$ where $\alpha_i$ captures the unobserved, time-invariant individual effects.
 
@@ -389,7 +394,7 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
   print(FE_with_time_effects)
   ```
 
-#### 3. Random Effects model
+#### 6. Random Effects model
 
   $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$
 
@@ -430,7 +435,7 @@ print("Hausman Test Statistic:", hausman_statistics)
 print("p-value:", p_value)
 ```
 
-#### 4. Between Model (between estimator)
+#### 7. Between Model (between estimator)
 
   ![between](https://latex.codecogs.com/svg.image?\inline&space;\overline{Y}_{i}=\beta_0&plus;\beta_1\overline{X}_i&plus;\overline{\epsilon}_{i})
 
