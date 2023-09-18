@@ -465,6 +465,8 @@ The model examines the "between variation" (variation across entities/cross-sect
 
 ### Statistical Time Series Forecasting
 
+`L`: lag operator, $L^k y_t = y_{t-k}$.
+
 #### 1. Import the libraries
 
   ```python
