@@ -339,7 +339,7 @@ Each entity $i$ is observed over $t$ periods.
   $Y_{it} = \alpha_i + \beta_1 X_{it} + \epsilon_{it}$ where $\alpha_i$ captures the unobserved, time-invariant individual effects.
 
   > [!IMPORTANT]
-  > In panel data, heterogeneity across entities (e.g., individuals, firms) can lead to omitted variable bias. Time-invariant firm characteristics, such as *company culture*, are often unobservable to econometricians. These uncontrolled, unobserved characteristics $\alpha_i$ are absorbed into the error term and can be **correlated** with other observed firm characteristics $X_{it}$. To account for potential endogeneity, we add/control a fixed effect into the model.
+  > In panel data, heterogeneity across entities (e.g., individuals, firms) can lead to omitted variable bias. Time-invariant firm characteristics, such as *company culture*, are often unobservable to econometricians. These uncontrolled, unobserved characteristics $\alpha_i$ are absorbed into the error term and can be **correlated** with other observed firm characteristics ![X](https://latex.codecogs.com/svg.image?\inline&space;X_{it}). To account for potential endogeneity, we add/control a fixed effect into the model.
 
 The fixed effects models use the "within variation" (variation of an entity over time):
 
