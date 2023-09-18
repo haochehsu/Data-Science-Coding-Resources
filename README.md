@@ -34,9 +34,9 @@
 - Statistical Time Series Forecasting
   - [Import the libraries](#1-import-the-libraries)
   - [Autoregressive model](#2-autoregressive-model)
-  - [Import the libraries](#1-import-the-libraries)
-  - [Import the libraries](#1-import-the-libraries)
-  - [Import the libraries](#1-import-the-libraries)
+  - [Moving average model](#3-moving-average-model)
+  - [Autoregressive moving average model](#4-autoregressive-moving-average-model)
+  - [Autoregressive integrated moving average model](#5-autoregressive-integrated-moving-average-model)
   
 ---
 
