@@ -545,7 +545,7 @@ print(f"ARMA parameters: {result_arma.params}")
 
 The `ARIMA(2,1,1)` model combines the components of `AR(2)` and `MA(1)`, and also accounts for any non-stationarity through the (first-order) `differencing` term:
 
-$(1 - 0.85L^1 - 0.3L^2)(1-L^1)y_t = (1 + 0.6L^1)\epsilon_t \Longrightarrow y_t - 1.85y_{t-1} + 0.55y_{t-2} + 0.3y_{t-3} = \epsilon_t + 0.6\epsilon_{t-1}$
+$(1 - 0.85L^1 - 0.3L^2)(1-L^1)y_t = (1 + 0.6L^1)\epsilon_t \Longrightarrow y_t = 1.85y_{t-1} - 0.55y_{t-2} - 0.3y_{t-3} + \epsilon_t + 0.6\epsilon_{t-1}$
 
 Building on the previously generated `ARMA(2,1)` data, we integrate the series once to obtain `ARIMA(2,1,1)` data:
 
