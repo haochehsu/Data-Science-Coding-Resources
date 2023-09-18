@@ -31,6 +31,12 @@
   - [Random effects model](#6-random-effects-model)
     - [Hausman test](#hausman-test)
   - [Between model](#7-between-model-between-estimator)
+- Statistical Time Series Forecasting
+  - [Import the libraries](#1-import-the-libraries)
+  - [Autoregressive model](#2-autoregressive-model)
+  - [Import the libraries](#1-import-the-libraries)
+  - [Import the libraries](#1-import-the-libraries)
+  - [Import the libraries](#1-import-the-libraries)
   
 ---
 
@@ -459,7 +465,7 @@ The model examines the "between variation" (variation across entities/cross-sect
 
 ### Statistical Time Series Forecasting
 
-#### 1. Install the libraries
+#### 1. Import the libraries
 
   ```python
   from statsmodels.tsa.arima_process import ArmaProcess
@@ -491,7 +497,7 @@ result_ar = model_ar.fit()
 print(f"AR parameters: {result_ar.params}")
 ```
 
-#### 2. Moving average model
+#### 3. Moving average model
 
 In an `MA(2)` model, the current value of a time series is defined by its current and two previous shocks:
 
@@ -514,7 +520,7 @@ result_ma = model_ma.fit()
 print(f"MA parameters: {result_ma.params}")
 ```
 
-#### 3. Autoregressive moving average model
+#### 4. Autoregressive moving average model
 
 The `ARMA(2,1)` model combines the components of `AR(2)` and `MA(1)`:
 
@@ -535,7 +541,7 @@ result_arma = model_arma.fit()
 print(f"ARMA parameters: {result_arma.params}")
 ```
 
-#### 4. Autoregressive integrated moving average model
+#### 5. Autoregressive integrated moving average model
 
 The `ARIMA(2,1,1)` model combines the components of `AR(2)` and `MA(1)`, and also accounts for any non-stationarity through the (first-order) `differencing` term:
 
