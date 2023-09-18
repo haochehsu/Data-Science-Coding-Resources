@@ -12,7 +12,7 @@
 - Cloud instances
   - [Google Cloud: Vertex AI](#google-cloud-vertex-ai)
   - [AWS: SageMaker](#aws-sagemaker)
-- Regression
+- Linear Regression
   - [Import the libraries](#1-import-the-libraries)
   - [Read the data](#2-import-the-libraries)
   - [Linear regression](#3-linear-regression)
