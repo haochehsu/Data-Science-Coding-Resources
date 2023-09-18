@@ -405,7 +405,7 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
   $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$
 
   > [!IMPORTANT]
-  > Alternatively, the random effect model assumes that the time-invariant entity effect (fixed effects) $\alpha_i$ is a random variable that is **uncorrelated** with $X_{it}$.
+  > The random effect model assumes that the time-invariant entity effect (fixed effects) $\alpha_i$ is a random variable that is **uncorrelated** with $X_{it}$.
 
   Based on the assumed distribution of the $\alpha_i$'s, heteroscedasticity violates the OLS assumptions. Therefore, we use generalized least squares (GLS) to estimate the model.
   
