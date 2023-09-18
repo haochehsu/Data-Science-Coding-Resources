@@ -28,7 +28,7 @@
     - [Within transformation](#b-within-transformation-within-estimator)
     - [First-difference model](#c-first-difference-model)
     - [Adding time-fixed effects](#d-adding-time-fixed-effects)
-  - [Random effects model](#6-random-effects-model)
+  - [Random-effects model](#6-random-effects-model)
     - [Hausman test](#hausman-test)
   - [Between model](#7-between-model-between-estimator)
 - Statistical Time Series Forecasting
@@ -406,7 +406,7 @@ $Y_{it} = \alpha_i + \lambda_i + \beta_1 X_{it} + \epsilon_{it}$ where $\lambda_
   print(FE_with_time_effects)
   ```
 
-#### 6. Random effects model
+#### 6. Random-effects model
 
   $Y_{it} = \beta_0 + \beta_1 X_{it} + (\alpha_i + \epsilon_{it})$ where $\alpha_i\sim N(0, \sigma_{\alpha}^2)$ and $\sigma_{\alpha}^2$ is the variance of the entity specific effect.
 
