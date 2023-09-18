@@ -443,7 +443,7 @@ print("p-value:", p_value)
 
 #### 7. Between model (between estimator)
 
-  ![between](https://latex.codecogs.com/svg.image?\inline&space;\overline{Y}_{i}=\beta_0&plus;\beta_1\overline{X}_i&plus;\overline{\epsilon}_{i})
+  ![between](https://latex.codecogs.com/svg.image?\inline&space;\bg{white}\overline{Y}_{i}=\beta_0&plus;\beta_1\overline{X}_i&plus;\overline{\epsilon}_{i})
 
 The model examines the "between variation" (variation across entities/cross-sectional at a particular point in time) in the data by averaging each variable over time for entity $i$.
 
