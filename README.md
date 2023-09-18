@@ -21,10 +21,16 @@
 - Panel Data
   - [Install the library](#1-install-the-library)
   - [Import the libraries](#2-read-the-data-and-store-it-in-a-data-frame-df)
-  - [Linear regression](#3-linear-regression)
-  - [Linear regression with categorical data](#4-linear-regression-with-categorical-data)
-  - [Instrumental variable and 2-stage least squares](#5-instrumental-variable-and-2-stage-least-squares)
-  
+  - [Read the data](#3-read-the-data-and-store-it-in-a-data-frame-df)
+  - [Pooled model](#4-pooled-model)
+  - [Fixed-Effects Model](#5-fixed-effects-model)
+    - [Add fixed effects](#a-add-fixed-effects)
+    - [Within transformation](#b-within-transformation-within-estimator)
+    - [First-Difference model](#c-first-difference-model)
+    - [Adding time-fixed effects](#d-adding-time-fixed-effects)
+  - [Random Effects model](#6-random-effects-model)
+    - [Hausman test](#hausman-test)
+  - [Between Model](#7-between-model-between-estimator)
   
 ---
 
