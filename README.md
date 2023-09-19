@@ -247,7 +247,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
     
   - `sm.OLS` (passing in variable): manual 2-stage least squares
   
-    ```py
+    ```python
     # First Stage
     X_first_stage = sm.add_constant(df[['Instrument']])
     model_first_stage = sm.OLS(df['X1'], X_first_stage).fit()
@@ -265,7 +265,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
    - Clustered standard errors
      - Cluster based on the `Category` variable: pass the arguments to the `.fit()` method.
 
-       ```py
+       ```python
        .fit(cov_type='cluster', cov_kwds={'groups': df['Category']})
        ```
 
@@ -274,13 +274,13 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
        
        1. In `IV2SLS`
 
-          ```py
+          ```python
           .fit(debiased=True)
           ```
           
        2. In `sm.OLS` (passing in variable) and `smf.ols` (passing in formula)
           
-          ```py
+          ```python
           .fit(cov_type='HC1')
           ```
           
@@ -290,7 +290,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
           
     - In `smf.ols` (passing in formula): add `-1` into the formula
    
-      ```
+      ```python
       model = smf.ols(formula='Y ~ X1 + X2 - 1', data=df).fit()
       print(model.summary())
       ```
@@ -301,7 +301,7 @@ $y_{i} = \beta_0 + \beta_{1i} \cdot \widehat{x}_{1i} + \epsilon_i$
 
 #### 1. Install the library
 
-  ```python
+  ```sh
   pip install linearmodels
   ```
 
