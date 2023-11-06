@@ -141,6 +141,12 @@ JupyterLab offers a more extensible and modular environment integrating notebook
   - `Tensorflow` and `PyTorch` instances: Available to add a `T4 GPU`.
 - Pricing: $0.15 hourly
   - [Pricing](https://cloud.google.com/vertex-ai/pricing) for other instance configurations.
+- Instance management
+  - Billing applies to all resources, including computational power and storage, used by an instance.
+  - Shutdown: Temporarily stopping the instance cuts costs related to active computation, but not storage usage.
+    - Since the storage (100GB) attached to notebooks is a "persistent disk," you will continue to be billed for disk storage usage even when the instance is stopped.
+    - Data remains intact on the persistent disk during the instance shutdown.
+  - Deletion: Delete the instance after use to halt all incurred charges.
 
 ### AWS ([SageMaker](https://us-west-1.console.aws.amazon.com/sagemaker/home?region=us-west-1#/notebook-instances))
 <img draggable="false" src="/image/aws_icon.png" alt="" style="width: 8%; padding-bottom:5px; pointer-events:none"/>
